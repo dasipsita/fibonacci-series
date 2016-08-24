@@ -1,0 +1,60 @@
+body{
+	width: 100%;
+	overflow: auto;
+	max-width: 100%;
+	overflow-x:hidden; 
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+}
+
+button{
+	background-color: crimson;
+	font-size:14px;
+	line-height: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color:white;
+}
+
+p{
+	color: white;
+	font-size: 14px;
+	line-height: 29px;
+	font-family: 'Source Sans Pro' , sans-serif;
+}
+
+.spaced-cont {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+/*home*/
+
+#home_head {
+	background-image: url("../images/grey_fibonacci_bg.jpg");
+	/*background-color: #3f7afc;*/
+	background-position: no-repeat center center;
+	background-size: cover;
+	height: 660px;
+	position: relative;
+}
+
+#home_body {
+	/*background-color: ghostwhite;*/
+	padding-top: 20px;
+	height: 250px;
+	width:700px;
+	margin-left: 495px;
+	margin-top: 250px;
+	position: relative;
+}
+
+#form {
+
+}
+
+#description{
+
+}
+

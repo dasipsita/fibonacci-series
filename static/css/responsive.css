@@ -1,0 +1,17 @@
+@media (min-width: 881px) and (max-width: 991px) {
+	#home_head {
+		height: 575px;
+	}
+}
+
+@media (max-width: 880px) {
+	#home_head {
+		height: 500px;
+	}
+}
+
+@media (max-height: 480px) {
+	#home_head {
+		height: 400px;
+	}
+}

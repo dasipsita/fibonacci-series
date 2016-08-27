@@ -1,20 +1,15 @@
 from django.test import TestCase
 import views
-# Create your tests here.
 
-class SimpleTest:
-	def __init__(self,n):
-		"""
-		Tests that for range 5 fibonacci number is 5.
-		"""
-		response = views.get_result(n)
-		if response == 5:
-			print "function working correctly"
-		else:	
-			print "function is not working correctly"
-
-SimpleTest(5)
-
-	   
+class SimpleTest(TestCase):
+    def test_basic_fibonacci_number(self):
+        """
+        Tests cases for finding the nth fibonacci number
+        """
+        self.assertEqual(0 , views.fibonacci(0))
+        self.assertEqual(1 , views.fibonacci(1))
+        self.assertEqual("Negative argument. Invalid input_range." , views.fibonacci(-8))
+        self.assertEqual(832040 , views.fibonacci(30))
+  
 
 

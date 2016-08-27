@@ -48,7 +48,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Fibonacci number</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Fibonacci Numbers</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,7 +58,7 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Calculator</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -73,10 +73,13 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading"></h1>
+                <h1 id="homeHeading">Fibonacci Sequence and Numbers</h1>
                 <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p>The Fibonacci sequence is a set of numbers that starts with a one or a zero, followed by a one, and proceeds based on the rule that each number (called a Fibonacci number) is equal to the sum of the preceding two numbers. It is represented by the  relation:<br><i><b>F<sub>n</sub> = F<sub>n-1</sub>+F<sub>n-2</sub>; F<sub>0</sub> = 0, F<sub>1</sub> = 1</b></i><br>
+                The Fibonacci sequence is named after <i><b>Leonardo Pisano</b></i> (also known as Fibonacci ), an Italian mathematician. Fibonacci used the arithmetic series to illustrate a problem based on a pair of breeding rabbits:
+                <br>"How many pairs of rabbits will be produced in a year, beginning with a single pair, if in every month each pair bears a new pair which becomes productive from the second month on?" The result can be expressed numerically as:<br><i><b>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...</b></i></p>
+
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Fibonacci Algorithms</a>
             </div>
         </div>
     </header>
@@ -85,10 +88,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">Algorithms to Calculate the n<sup>th</sup> Fibonacci Number</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    <p class="text-faded">There are several algorithms for calculating the n<sup>th</sup> Fibonacci Number <i>viz.</i>, <i><b>Simple Iteration</b></i>, <i><b>Naive Recursion</b></i>, <i><b>Memoization</b></i>, <i><b>Fast Doubling etc</b></i>. Memoization is a faster option, but it has a time complexity of <i>O(n)</i>. The fastest algorithm to calculate the n<sup>th</sup> fibonacci number is Fast Doubling. This is fast, especially because the algorithm uses multiplication rather than addition, as is the case in the other algorithms. It has a time complexity of <i>O(log n)</i>. We have used this algorithm for our Fibonacci Calculator.<br><br>
+                    <b>Fast Doubling</b><br>
+                    To find the n<sup>th</sup> Fibonacci number, the fast doubling algorithm uses the following relation:<br>
+                    <i><b>F<sub>2n</sub> = F<sub>n</sub>(2F<sub>n+1</sub> - F<sub>n</sub>)<br>
+                    F<sub>2n + 1</sub> = F<sub>n</sub><sup>2</sup> + F<sub>n + 1</sub><sup>2</sup></b></i></p>
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Calculate Fibonacci</a>
                 </div>
             </div>
         </div>
@@ -98,7 +105,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Fibonacci Calculator</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -107,17 +114,17 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 text-center">
                     <div class="service-box">
-                        <form class="form-horizontal" action="/" method="post" id="FORM-ID">
+                        <form class="form-horizontal" action="/" method="post" id="fibonacci-form">
                             {% csrf_token %}
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="range">Range:</label>
                                 <div class="col-sm-10">
-                                    <input type="number" min="0" max="10000" class="form-control" id="range" placeholder="Enter range" name="range">
+                                    <input type="number" min="0" max="100000000" class="form-control" id="range" placeholder="Enter range" name="range">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-primary btn-xl">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-xl">Get Fibonacci</button>
                                 </div>
                             </div>
                         </form>
@@ -128,7 +135,7 @@
                         {% if response %}
                             <!-- do nothing -->
                         {% else %}      
-                            <p>Result will be shown here</p>
+                            <p>The Fibonacci Number will be displayed here...</p>
                         {% endif %}    
                     </div>
                     <div id='loadingmessage' class="text-center" style='display:none;'>
@@ -140,23 +147,21 @@
         </div>
     </section>
 
-    <!-- <hr class="divider"> -->
-
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">Get In Touch!</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an range and we will get back to you as soon as possible!</p>
+                    <p>If you have any queries or feedback, give me a call or drop a mail.<br>  Will get back to you as soon as possible!</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <p>789-901-8282</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-range@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=ipsita.das1407@gmail.com">ipsita.das1407@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -176,7 +181,7 @@
     <!-- Theme JavaScript -->
     <script src="{% static 'js/creative.min.js' %}"></script>
     <script>
-        var frm = $('#FORM-ID');
+        var frm = $('#fibonacci-form');
             frm.submit(function () {
                 $('.message').hide();  // hide the default message.
                 $('#loadingmessage').show();  // show the loading message.
@@ -186,7 +191,7 @@
                     data: frm.serialize(),
                     success: function (data) {
                         var d = $.parseJSON(data);
-                        content ='<p>The nth fibonacci number for the given range is: ' + d.response + '<br> Total time taken: ' + d.taken_time + ' sec </p>'
+                        content ='<p>The n<sup>th</sup> Fibonacci Number for the given range is: <span style="color:#F05F40">' + d.response + '</span><br> Total time taken: <span style="color:#F05F40">' + d.total_time + '</span> sec </p>'
                         $('#loadingmessage').hide();  // hide the loading message.
                         $('.message').show();  // show the final message.
                         $(".message").html(content);
